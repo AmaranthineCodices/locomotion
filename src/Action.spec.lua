@@ -31,5 +31,22 @@ return function()
             action:Start()
             expect(callCount).to.equal(1)
         end)
+
+        it("should return the API from the initializer function", function()
+            -- Declared here so we can verify that the Stop function isn't
+            -- being clobbered
+            local function stop() end
+
+            local action = Action.new(function()
+                return {
+                    Test = 1,
+                    Stop = stop,
+                }
+            end)
+
+            local api = action:Start()
+            expect(api.Test).to.equal(1)
+            expect(api.Stop).to.equal(stop)
+        end)
     end)
 end
