@@ -16,6 +16,7 @@ local function lerpNumber(a, b, alpha)
 end
 
 local function tween(props)
+	props = props or {}
 	local from = props.from or 1
 	local to = props.to or 1
 	local easing = props.easing or easings.linear
