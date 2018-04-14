@@ -33,6 +33,13 @@ end
 function Action:start(callbacks)
 	callbacks = callbacks or {}
 
+	-- If only one callback is supplied, use it as the "update" callback
+	if typeof(callbacks) == "function" then
+		callbacks = {
+			update = callbacks
+		}
+	end
+
 	-- Get the action's API.
 	-- This may or may not be supplied by the init function.
 	local api = self._init(callbacks) or {}

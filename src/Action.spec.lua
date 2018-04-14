@@ -61,5 +61,16 @@ return function()
                 update = update
             })
         end)
+
+        it("should use a single function as the update callback", function()
+            local function update()
+            end
+
+            local action = Action.new(function(callbacks)
+                expect(callbacks.update).to.equal(update)
+            end)
+
+            action:start(update)
+        end)
     end)
 end
