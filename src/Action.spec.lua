@@ -19,7 +19,7 @@ return function()
 		end)
 	end)
 
-	describe("Start", function()
+	describe("start", function()
 		it("should always return a table with a Stop function", function()
 			local dummyAction = Action.new(function() end)
 			local startResult = dummyAction:start()
@@ -77,6 +77,39 @@ return function()
 			end)
 
 			action:start(update)
+		end)
+	end)
+
+	describe("map", function()
+		it("should return a new action", function()
+			local original = Action.new(function() end)
+			local mapped = original:map(function() end)
+
+			expect(mapped).to.never.equal(original)
+		end)
+
+		it("should execute mappers in sequence", function()
+			local firstCount = 0
+			local secondCount = 0
+
+			local base = Action.new(function(callbacks)
+				callbacks.update(1)
+			end)
+
+			local mapped = base:map(function(value)
+				firstCount = firstCount + 1
+				return value + 1
+			end, function(value)
+				secondCount = secondCount + 1
+				return value * 10
+			end)
+
+			mapped:start(function(value)
+				expect(value).to.equal(20)
+			end)
+
+			expect(firstCount).to.equal(1)
+			expect(secondCount).to.equal(1)
 		end)
 	end)
 end

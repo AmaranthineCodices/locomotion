@@ -52,4 +52,34 @@ function Action:start(callbacks)
 	return api
 end
 
+function Action:map(...)
+	-- wrap mappers in a table so varargs can be accessed from the inner function
+	local mappers = { ... }
+
+	-- Optimization: If there are no mappers we can return this action as-is.
+	if #mappers == 0 then
+		return self
+	end
+
+	return Action.new(function(callbacks)
+		local patchedCallbacks = {}
+
+		for key, callback in pairs(callbacks) do
+			if key == "update" then
+				patchedCallbacks[key] = function(value)
+					for _, mapper in ipairs(mappers) do
+						value = mapper(value)
+					end
+
+					callback(value)
+				end
+			else
+				patchedCallbacks[key] = callback
+			end
+		end
+
+		return self._init(patchedCallbacks)
+	end)
+end
+
 return Action
