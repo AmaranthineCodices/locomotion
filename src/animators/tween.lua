@@ -17,7 +17,7 @@ end
 
 local function tween(props)
 	props = props or {}
-	local from = props.from or 1
+	local from = props.from or 0
 	local to = props.to or 1
 	local easing = props.easing or easings.linear
 	local duration = props.duration or 1
