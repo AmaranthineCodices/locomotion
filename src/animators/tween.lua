@@ -8,8 +8,8 @@
 
 local RunService = game:GetService("RunService")
 
-local Action = require(script.Parent.Action)
-local easings = require(script.Parent.easings)
+local Action = require(script.Parent.Parent.Action)
+local easings = require(script.Parent.Parent.easings)
 
 local function lerpNumber(a, b, alpha)
 	return (1 - alpha) * a + b * alpha
