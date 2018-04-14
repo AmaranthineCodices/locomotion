@@ -39,14 +39,14 @@ return function()
 
             local action = Action.new(function()
                 return {
-                    Test = 1,
-                    Stop = stop,
+                    test = 1,
+                    stop = stop,
                 }
             end)
 
             local api = action:start()
-            expect(api.Test).to.equal(1)
-            expect(api.Stop).to.equal(stop)
+            expect(api.test).to.equal(1)
+            expect(api.stop).to.equal(stop)
         end)
 
         it("should pass the callbacks map to the initializer", function()
