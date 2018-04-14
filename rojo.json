@@ -13,6 +13,10 @@
 		"rbx-test-harness": {
 			"path": "tests/rbxHarness",
 			"target": "ServerScriptService.LocomotionTestHarness"
+		},
+		"examples": {
+			"path": "examples",
+			"target": "StarterPlayer.StarterPlayerScripts.LocomotionExamples"
 		}
     }
 }
