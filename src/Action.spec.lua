@@ -16,10 +16,10 @@ return function()
     describe("Start", function()
         it("should always return a table with a Stop function", function()
             local dummyAction = Action.new(function() end)
-            local startResult = dummyAction:Start()
+            local startResult = dummyAction:start()
 
             expect(typeof(startResult)).to.equal("table")
-            expect(typeof(startResult.Stop)).to.equal("function")
+            expect(typeof(startResult.stop)).to.equal("function")
         end)
 
         it("should call the initializer", function()
@@ -28,7 +28,7 @@ return function()
                 callCount = callCount + 1
             end)
 
-            action:Start()
+            action:start()
             expect(callCount).to.equal(1)
         end)
 
@@ -44,7 +44,7 @@ return function()
                 }
             end)
 
-            local api = action:Start()
+            local api = action:start()
             expect(api.Test).to.equal(1)
             expect(api.Stop).to.equal(stop)
         end)
@@ -57,7 +57,7 @@ return function()
                 expect(callbacks.update).to.equal(update)
             end)
 
-            action:Start({
+            action:start({
                 update = update
             })
         end)

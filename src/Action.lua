@@ -30,7 +30,7 @@ end
 --[[
 	Starts the action. Returns the API returned by the action init function.
 ]]
-function Action:Start(callbacks)
+function Action:start(callbacks)
 	callbacks = callbacks or {}
 
 	-- Get the action's API.
@@ -38,8 +38,8 @@ function Action:Start(callbacks)
 	local api = self._init(callbacks) or {}
 
 	-- If there's no stop action provided, use the no-op one.
-	if api.Stop == nil then
-		api.Stop = noop
+	if api.stop == nil then
+		api.stop = noop
 	end
 
 	return api
