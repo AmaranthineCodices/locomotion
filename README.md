@@ -1,4 +1,4 @@
-<h1 align="center">locomotion</h1>
+<h1 align="center">Locomotion</h1>
 <div align="center"><img src="https://forthebadge.com/images/badges/powered-by-electricity.svg" /> <img src="https://forthebadge.com/images/badges/built-with-love.svg" /> <img src="https://forthebadge.com/images/badges/uses-badges.svg" /> <img src="https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg" /></div>
 <div align="center">A motion library for Roblox.</div>
 
