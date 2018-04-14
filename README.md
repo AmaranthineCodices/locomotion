@@ -1,6 +1,6 @@
-<h1 class="center">locomotion</h1>
-<div class="center">[![forthebadge](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)</div>
-<div class="center">A motion library for Roblox.</div>
+<h1 align="center">locomotion</h1>
+<div align="center"><img src="https://forthebadge.com/images/badges/powered-by-electricity.svg" /> <img src="https://forthebadge.com/images/badges/built-with-love.svg" /> <img src="https://forthebadge.com/images/badges/uses-badges.svg" /> <img src="https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg" /></div>
+<div align="center">A motion library for Roblox.</div>
 
 ## Usage and examples
 Coming soon!
