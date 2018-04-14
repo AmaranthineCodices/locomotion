@@ -42,6 +42,8 @@ local function tween(props)
 			if alpha >= 1 then
 				connection:Disconnect()
 
+				callbacks.update(to)
+
 				if callbacks.complete then
 					callbacks.complete(to)
 				end
