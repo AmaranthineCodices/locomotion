@@ -18,6 +18,8 @@ Action.__index = Action
 	Creates a new action.
 ]]
 function Action.new(init)
+	assert(typeof(init) == "function", "init function must be a function")
+
 	local self = setmetatable({
 		_init = init,
 	}, Action)
