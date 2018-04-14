@@ -48,5 +48,18 @@ return function()
             expect(api.Test).to.equal(1)
             expect(api.Stop).to.equal(stop)
         end)
+
+        it("should pass the callbacks map to the initializer", function()
+            local function update()
+            end
+
+            local action = Action.new(function(callbacks)
+                expect(callbacks.update).to.equal(update)
+            end)
+
+            action:Start({
+                update = update
+            })
+        end)
     end)
 end
