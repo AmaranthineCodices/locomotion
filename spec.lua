@@ -51,6 +51,13 @@ loadFolder("src", "Locomotion")
 mergeUpper(ReplicatedStorage.TestEZ)
 mergeUpper(ReplicatedStorage.Locomotion)
 
+-- Before running tests in lemur, set _G.LEMUR_TESTING to true.
+-- This allows some tests to be skipped if they're not possible to run from
+-- lemur. These tests are mainly around the animators and other aspects of
+-- Locomotion that are closely tied to Roblox and cannot be tested from lemur
+-- at present.
+_G.LEMUR_TESTING = true
+
 -- Now run TestEZ's tests!
 local TestEZ = habitat:require(ReplicatedStorage.TestEZ)
 local TestBootstrap = TestEZ.TestBootstrap
