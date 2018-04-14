@@ -1,0 +1,18 @@
+{
+    "name": "locomotion-dev",
+    "servePort": 8000,
+    "partitions": {
+        "src": {
+            "path": "src",
+            "target": "ReplicatedStorage.Locomotion"
+		},
+		"testez": {
+			"path": "lib/TestEZ/lib",
+			"target": "ReplicatedStorage.TestEZ"
+		},
+		"rbx-test-harness": {
+			"path": "tests/rbxHarness",
+			"target": "ServerScriptService.LocomotionTestHarness"
+		}
+    }
+}
